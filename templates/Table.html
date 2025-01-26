@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointments Table</title>
+  <link rel="stylesheet" href="static/style1.css">
+</head>
+<body>
+  <section>
+    <h1>Appointments Table</h1>
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr>
+            <th>Appointment ID</th>
+            <th>Student Name</th>
+            <th>Doctor Name</th>
+            <th>Appointment Date</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+          {% for row in rows %}
+          <tr>
+            <td>{{ row[0] }}</td>  <!-- Appointment ID -->
+            <td>{{ row[1] }}</td>  <!-- Student Name -->
+            <td>{{ row[2] }}</td>  <!-- Doctor Name -->
+            <td>{{ row[3] }}</td>  <!-- Appointment Date -->
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>

@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>IIUM Sejahtera Clinic Management System</title>
+    <link rel="stylesheet" href="static/style.css"> <!-- Link to your compiled CSS -->
+    <style>
+        /* Add inline styles if necessary, but external CSS is preferred */
+    </style>
+</head>
+<body>
+  <h2>Doctor Login for IIUM Sejahtera Clinic Management System</h2>
+  <div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <h1>Sign Up</h1>
+        <span>Only an Admin is allowed to register a doctor.Please contact the nearest IT Admin</span>
+    </div>
+    <div class="form-container sign-in-container">
+      <form action="/doc_login" method="POST" class="log-in">
+        <h1>Login</h1>
+        <span>Enter your details below</span>
+        <input type="number" placeholder="Doc ID" name='Doc_Id'/>
+        <input type="password" placeholder="Password" name='password'/>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Already Have An Account?</h1>
+          <p>Login Here</p>
+          <button class="ghost" id="signIn">Login</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Doctor Login for IIUM Sejahtera Clinic</h1>
+          <p>Not a doctor?,click the link at the bottom of the page go to login page for student</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Flash Messages -->
+<div style="margin-top: 20px;"> <!-- Adjust margin-top as needed -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div>
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}" role="alert">
+            {{ message }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+</div>
+  
+<footer>
+  <a href="/">
+    <button type="button">Back to Student Login</button>
+</a>
+</footer> 
+  <script src="static/Js/scripts.js"></script>
+  </body>
+</html>
